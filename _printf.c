@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				cal_len = 0;
 				while (st_r[cal_len] != '\0')
 				{
-					cal_len ++;
+					cal_len++;
 				}
 				write(1, st_r, cal_len);
 				pr_char += cal_len;
