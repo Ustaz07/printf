@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 
 	va_start(ls_args, format);
 	if (format == NULL)
-		return (NULL);
+		return (-1);
 	i = pr_char = 0;
 	while (format[i] != '\0')
 	{
