@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				st_r = va_arg(ls_args, char*);
+				if (st_r == NULL)
+					return (NULL);
 				cal_len = 0;
 				while (st_r[cal_len] != '\0')
 				{
