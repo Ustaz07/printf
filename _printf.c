@@ -39,7 +39,6 @@ int _printf(const char *format, ...)
 				write(1, st_r, cal_len);
 				pr_char += cal_len;
 			}
-			st_r == '\0';
 			else if (format[i] == '%')
 				write(1, &format[i], 1), pr_char++;
 		}
