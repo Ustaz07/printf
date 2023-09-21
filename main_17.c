@@ -11,9 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%");
-	len2 = printf("%");
-	printf("len is %d, len2 is %d\n", len, len2);
+	len = _printf("%!\n");
+	len2 = printf("%!\n");
 	fflush(stdout);
 	if (len != len2)
 	{
