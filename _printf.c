@@ -20,9 +20,10 @@ int _printf(const char *format, ...)
 			write(1, &format[i], 1), pr_char++;
 		else
 		{
+			
 			i++;
 			if (format[i] == '\0')
-				return (0);
+				return (-1);
 			if (format[i] == 'c')
 			{
 				c_char = va_arg(ls_args, int);
