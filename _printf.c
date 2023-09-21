@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 				return (0);
 			else
-				return (NULL);
+				write(1, &format[i], 1);	
 			if (format[i] == 'c')
 			{
 				c_char = va_arg(ls_args, int);
