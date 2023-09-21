@@ -33,7 +33,10 @@ int _printf(const char *format, ...)
 				st_r = va_arg(ls_args, char*);
 				cal_len = 0;
 				if (st_r[cal_len] == '\0')
+				{
 					write(1, st_r, cal_len);
+					return (0);
+				}
 				while (st_r[cal_len] != '\0')
 				{
 					cal_len++;
