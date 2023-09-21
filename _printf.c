@@ -18,9 +18,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			write(1, &format[i], 1), pr_char++;
+		else if (format[i] == '%')
+			write(1, &format[i], 1), pr_char++;
 		else
 		{
-			write(1, &format[i], 1), pr_char++;
 			i++;
 			if (format[i] == '\0')
 				return (0);
