@@ -20,9 +20,12 @@ int _printf(const char *format, ...)
 			write(1, &format[i], 1), pr_char++;
 		else
 		{
+			write(1, &format[i], 1), pr_char++;
 			i++;
 			if (format[i] == '\0')
 				return (0);
+			else
+				return (NULL);
 			if (format[i] == 'c')
 			{
 				c_char = va_arg(ls_args, int);
@@ -32,11 +35,6 @@ int _printf(const char *format, ...)
 			{
 				st_r = va_arg(ls_args, char*);
 				cal_len = 0;
-				if (st_r[cal_len] == '\0')
-				{
-					write(1, st_r, cal_len);
-					return (0);
-				}
 				while (st_r[cal_len] != '\0')
 				{
 					cal_len++;
@@ -44,8 +42,8 @@ int _printf(const char *format, ...)
 				write(1, st_r, cal_len);
 				pr_char += cal_len;
 			}
-			else if (format[i] == '%')
-				write(1, &format[i], 1), pr_char++;
+			//else if (format[i] == '%')
+			//	write(1, &format[i], 1), pr_char++;
 		}
 		i++;
 	}
