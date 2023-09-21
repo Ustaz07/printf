@@ -31,11 +31,14 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				st_r = va_arg(ls_args, char*);
+				cal_len = 0;
 				if (st_r == NULL)
+				{
 					write(1, "(null)", 6);
+					pr_char += 6;
+				}
 				else
 				{
-					cal_len = 0;
 					while (st_r[cal_len] != '\0')
 						cal_len++;
 					write(1, st_r, cal_len);
