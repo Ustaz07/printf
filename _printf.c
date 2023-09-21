@@ -31,8 +31,6 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				st_r = va_arg(ls_args, char*);
-				if (st_r == NULL)
-					return (NULL);
 				cal_len = 0;
 				while (st_r[cal_len] != '\0')
 				{
@@ -40,6 +38,7 @@ int _printf(const char *format, ...)
 				}
 				write(1, st_r, cal_len);
 				pr_char += cal_len;
+				(st_r == '\0')
 			}
 			else if (format[i] == '%')
 				write(1, &format[i], 1), pr_char++;
